@@ -25,8 +25,8 @@ namespace denemesig
             _userCount++;
             _userList.Add(Context.ConnectionId);
             base.OnConnectedAsync();
-            this.Clients.All.SendAsync("updateCount", _userCount);
-            this.Clients.All.SendAsync("updateUserList", _userList);
+            this.Clients.All.SendAsync("UpdateCount", _userCount);
+            this.Clients.All.SendAsync("UpdateUserList", _userList);
             return Task.CompletedTask;
         }
 
@@ -36,8 +36,8 @@ namespace denemesig
             _userCount--;
             _userList.Remove(Context.ConnectionId);
             base.OnDisconnectedAsync(exception);
-            this.Clients.All.SendAsync("updateCount", _userCount);
-            this.Clients.All.SendAsync("updateUserList", _userList);
+            this.Clients.All.SendAsync("UpdateCount", _userCount);
+            this.Clients.All.SendAsync("UpdateUserList", _userList);
             return Task.CompletedTask;
         }
 

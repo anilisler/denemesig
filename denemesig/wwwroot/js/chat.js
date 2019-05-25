@@ -9,8 +9,6 @@ document.getElementById("sendButton").disabled = true;
 connection.start().then(function () {
     console.log("connected to hub successfully!");
     document.getElementById("sendButton").disabled = false;
-    updateOnlineUserCount(connection);
-    updateOnlineUserList(connection);
 }).catch(function (err) {
     return console.error(err.toString());
 });
@@ -24,6 +22,9 @@ connection.on("ReceiveMessage", function (user, message) {
     //add new message to list
     document.getElementById("messagesList").appendChild(li);
 });
+connection.on("UpdateCount", updateOnlineUserCount);
+connection.on("UpdateUserList", updateOnlineUserList);
+connection.onclose(onConnectionError);
 
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
@@ -36,33 +37,23 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     event.preventDefault();
 });
 
-function updateOnlineUserCount(connection) {
-    var messageCallback = function (message) {
-        console.log('message' + message);
-        if (!message) return;
-        var userCountSpan = document.getElementById('onlineUsersCount');
-        userCountSpan.innerText = "Online users: " + message;
-    };
-    //calling client method "updateCount" from hub
-    connection.on("updateCount", messageCallback);
-    connection.onclose(onConnectionError);
-}
+function updateOnlineUserCount(userCount) {
+    console.log('User count: ' + userCount);
+    if (!userCount) return;
+    var userCountSpan = document.getElementById('onlineUsersCount');
+    userCountSpan.innerText = "Online user count: " + userCount;
+};
 
-function updateOnlineUserList(connection) {
-    var funcCallback = function (userList) {
-        console.log('userList' + userList);
-        if (!userList) return;
-        document.getElementById("onlineUsersList").innerHTML = "";
-        userList.forEach(element => {
-            var li = document.createElement("li");
-            li.textContent = element;
-            document.getElementById("onlineUsersList").appendChild(li);
-        });
-    };
-    //calling client method "updateUserList" from hub
-    connection.on("updateUserList", funcCallback);
-    connection.onclose(onConnectionError);
-}
+function updateOnlineUserList(userList) {
+    console.log('Online user list:' + userList);
+    if (!userList) return;
+    document.getElementById("onlineUsersList").innerHTML = "";
+    userList.forEach(element => {
+        var li = document.createElement("li");
+        li.textContent = element;
+        document.getElementById("onlineUsersList").appendChild(li);
+    });
+};
 
 function onConnectionError(error) {
     if (error && error.message) {
