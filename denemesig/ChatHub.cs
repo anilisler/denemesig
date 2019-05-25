@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
@@ -10,12 +11,18 @@ namespace denemesig
         // how many users online
         private static int _userCount = 0;
 
-        //online users connection IDs
-        private static List<string> _userList = new List<string>();
+        //online users connection IDs and usernames key value pairs
+        private static Dictionary<string, string> _userConnName = new Dictionary<string, string>();
 
         //send message to all connected clients
         public async Task SendMessage(string user, string message)
         {
+            if (_userConnName.ContainsKey(Context.ConnectionId))
+            {
+                _userConnName[Context.ConnectionId] = user;
+                await this.Clients.All.SendAsync("UpdateUserList", _userConnName.Values.ToList());
+            }
+
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
 
@@ -23,10 +30,10 @@ namespace denemesig
         public override Task OnConnectedAsync()
         {
             _userCount++;
-            _userList.Add(Context.ConnectionId);
+            _userConnName.Add(Context.ConnectionId, Context.ConnectionId);
             base.OnConnectedAsync();
             this.Clients.All.SendAsync("UpdateCount", _userCount);
-            this.Clients.All.SendAsync("UpdateUserList", _userList);
+            this.Clients.All.SendAsync("UpdateUserList", _userConnName.Values.ToList());
             return Task.CompletedTask;
         }
 
@@ -34,10 +41,10 @@ namespace denemesig
         public override Task OnDisconnectedAsync(Exception exception)
         {
             _userCount--;
-            _userList.Remove(Context.ConnectionId);
+            _userConnName.Remove(Context.ConnectionId);
             base.OnDisconnectedAsync(exception);
             this.Clients.All.SendAsync("UpdateCount", _userCount);
-            this.Clients.All.SendAsync("UpdateUserList", _userList);
+            this.Clients.All.SendAsync("UpdateUserList", _userConnName.Values.ToList());
             return Task.CompletedTask;
         }
 

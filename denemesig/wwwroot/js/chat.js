@@ -16,7 +16,8 @@ connection.start().then(function () {
 //calling client method "ReceiveMessage" from hub
 connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var encodedMsg = user + " says " + msg;
+    var datetime = "("+new Date().getHours() + ":" + new Date().getMinutes() + ") ";
+    var encodedMsg = datetime + user + " : " + msg;
     var li = document.createElement("li");
     li.textContent = encodedMsg;
     //add new message to list
@@ -29,6 +30,7 @@ connection.onclose(onConnectionError);
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
+    document.getElementById("userInput").readOnly = true;
     document.getElementById("messageInput").value = "";
     //calling hub method "SendMessage" from client
     connection.invoke("SendMessage", user, message).catch(function (err) {
