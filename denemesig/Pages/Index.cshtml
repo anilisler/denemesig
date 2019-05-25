@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">&nbsp;</div>
     <div class="row">
-        <div class="col-6">&nbsp;</div>
+        @*<div class="col-6">&nbsp;</div>*@
         <div class="col-6">
             User..........<input type="text" id="userInput" />
             <br />
@@ -16,11 +16,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">&nbsp;</div>
+        @*<div class="col-6">&nbsp;</div>*@
         <div class="col-6">
+            <h5>All Messages</h5>
             <ul id="messagesList"></ul>
         </div>
+        <div class="col-6">
+            <h5 id="onlineUsersCount">Online users: 0</h5>
+            <ul id="onlineUsersList"></ul>
+        </div>
     </div>
+
+    
+
 </div>
+
+
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
