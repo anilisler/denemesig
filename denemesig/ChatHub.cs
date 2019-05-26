@@ -69,8 +69,5 @@ namespace denemesig
             //return client.GetTableReference("connection");
         }
 
-
-
-
     }
 }
