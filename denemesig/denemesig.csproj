@@ -10,7 +10,11 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
-    <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
+    <PackageReference Include="BundlerMinifier.Core" Version="2.9.406" />
   </ItemGroup>
+
+  <Target Name="MyPreCompileTarget" BeforeTargets="PrepareForPublish">
+  <Exec Command="dotnet bundle" />
+</Target>
 
 </Project>
