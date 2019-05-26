@@ -25,20 +25,26 @@ connection.on("ReceiveMessage", function (user, message) {
 });
 connection.on("UpdateCount", updateOnlineUserCount);
 connection.on("UpdateUserList", updateOnlineUserList);
+
 connection.onclose(onConnectionError);
 
+//send message button click event handler
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    document.getElementById("userInput").readOnly = true;
+  
+    //calling hub method "SendMessage" from client if user and message aren't empty
+    if (user != "" && message != "") {
+        document.getElementById("userInput").readOnly = true;
     document.getElementById("messageInput").value = "";
-    //calling hub method "SendMessage" from client
-    connection.invoke("SendMessage", user, message).catch(function (err) {
+         connection.invoke("SendMessage", user, message).catch(function (err) {
         return console.error(err.toString());
     });
+    }
     event.preventDefault();
 });
 
+//update user count span according to online user count in the system
 function updateOnlineUserCount(userCount) {
     console.log('User count: ' + userCount);
     if (!userCount) return;
@@ -46,6 +52,7 @@ function updateOnlineUserCount(userCount) {
     userCountSpan.innerText = "Online user count: " + userCount;
 };
 
+//update user list according to online user connection ids and names in the system
 function updateOnlineUserList(userList) {
     console.log('Online user list:' + userList);
     if (!userList) return;
