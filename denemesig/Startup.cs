@@ -1,3 +1,6 @@
+using System;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,10 +17,12 @@ namespace denemesig
             Configuration = configuration;
         }
 
+        public IContainer ApplicationContainer { get; private set; }
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -30,7 +35,19 @@ namespace denemesig
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSignalR();
 
-            services.Add(new ServiceDescriptor(typeof(ISave), new CloudStorage()));
+            // .net core built-in dependency injection
+            //services.Add(new ServiceDescriptor(typeof(ISave), new CloudStorage()));
+
+            //autofac IoC container build
+            // Create the container builder.
+            var builder = new ContainerBuilder();
+            builder.Populate(services);
+            //register CloudStorage class as ISave interface
+            builder.RegisterType<CloudStorage>().As<ISave>();
+            this.ApplicationContainer = builder.Build();
+
+            // Create the IServiceProvider based on the container.
+            return new AutofacServiceProvider(this.ApplicationContainer);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
