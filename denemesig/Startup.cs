@@ -43,7 +43,7 @@ namespace denemesig
             var builder = new ContainerBuilder();
             builder.Populate(services);
             //register CloudStorage class as ISave interface
-            builder.RegisterType<CloudStorage>().As<ISave>();
+            builder.RegisterType<CloudStorage>().As<ICloudStorage>();
             this.ApplicationContainer = builder.Build();
 
             // Create the IServiceProvider based on the container.

@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
 
 namespace denemesig
 {
     public class ChatHub : Hub
     {
-        private ISave _cloudSave;
+        private ICloudStorage _cloudSave;
 
         // how many users online
         private static int _userCount = 0;
@@ -19,7 +16,7 @@ namespace denemesig
         //online users connection IDs and usernames key value pairs
         private static Dictionary<string, string> _userConnName = new Dictionary<string, string>();
 
-        public ChatHub(ISave _save)
+        public ChatHub(ICloudStorage _save)
         {
             this._cloudSave = _save;
         }
@@ -34,8 +31,8 @@ namespace denemesig
             }
 
             await Clients.All.SendAsync("ReceiveMessage", user, message);
-
-            await _cloudSave.InsertMessage(Context.ConnectionId, user, message);
+        
+            _cloudSave.InsertMessage(Context.ConnectionId, user, message);
         }
 
         //works after client connects to hub
