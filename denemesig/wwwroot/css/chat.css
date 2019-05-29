@@ -1,0 +1,55 @@
+﻿body {
+    overflow:hidden;
+}
+
+.send-button {
+    background-color: #007AFF;
+    color: white;
+    border-radius: 5px;
+}
+
+.all-messages {
+    height: 200px;
+    padding-right: 5px;
+}
+
+.user-list{
+    height:200px;
+    padding-left:5px;
+}
+
+.chat-box {
+    border: 1px inset;
+    border-radius: 5px;
+    list-style: none;
+    padding-left: 0px;
+    height: 85%;
+    overflow: auto;
+}
+
+.chat-box > li {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.user-input {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-style:groove;
+}
+
+.message-input {
+    width: 50%;
+    margin-left: 19px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-style: groove;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

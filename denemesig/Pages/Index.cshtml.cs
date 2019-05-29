@@ -7,8 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace denemesig.Pages
 {
+    /// <summary>
+    /// Index model.
+    /// Subclass of PageModel
+    /// </summary>
     public class IndexModel : PageModel
     {
+        /// <summary>
+        /// Ons the get.
+        /// </summary>
         public void OnGet()
         {
 

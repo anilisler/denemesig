@@ -4,12 +4,27 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace denemesig
 {
+    /// <summary>
+    /// Cloud storage class.
+    /// </summary>
     public class CloudStorage : ICloudStorage
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:denemesig.CloudStorage"/> class.
+        /// Default constructor of CloudStorage class.
+        /// </summary>
         public CloudStorage()
         {
         }
 
+        /// <summary>
+        /// Inserts the message to Azure Cloud Storage Account Table "denemesigmessage"
+        /// Creates the table in cloud if it doesn't exist.
+        /// </summary>
+        /// <returns>The message <see cref="T:denemesig.MessageEntity"/> class.</returns>
+        /// <param name="connectionID">Connection identifier.</param>
+        /// <param name="user">User.</param>
+        /// <param name="message">Message.</param>
         public MessageEntity InsertMessage(string connectionID, string user, string message)
         {
             if (string.IsNullOrEmpty(connectionID))

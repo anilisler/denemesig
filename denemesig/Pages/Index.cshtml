@@ -1,14 +1,22 @@
 ﻿@page
-<div class="container">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/chat.min.css">
+</head>
+
+<div class="container" style="overflow">
     <div class="row">&nbsp;</div>
     <div class="row">
-        <div class="col-6">
-            User..........<input type="text" id="userInput" />
-            <br />
-            Message...<input type="text" id="messageInput" />
-            <input type="button" id="sendButton" value="Send Message" />
+        <div class="col-8 all-messages">
+            <h5>All Messages</h5>
+            <ul id="messagesList" class="chat-box"></ul>
+        </div>
+        <div class="col-4 text-right user-list">
+            <h5 id="onlineUsersCount">Online users: 0</h5>
+            <ul id="onlineUsersList" class="chat-box"></ul>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12">
             <hr />
@@ -16,15 +24,14 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <h5>All Messages</h5>
-            <ul id="messagesList"></ul>
-        </div>
-        <div class="col-6">
-            <h5 id="onlineUsersCount">Online users: 0</h5>
-            <ul id="onlineUsersList"></ul>
+            Username:<input type="text" id="userInput" class="user-input"/>
+            <br />
+            Message:<input type="text" id="messageInput" class="message-input"/>
+            <input type="button" id="sendButton" value="Send >" class="send-button"/>
         </div>
     </div>
 </div>
 
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.min.js"></script>
+

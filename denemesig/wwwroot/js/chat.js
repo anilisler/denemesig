@@ -16,12 +16,14 @@ connection.start().then(function () {
 //calling client method "ReceiveMessage" from hub
 connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var datetime = "("+new Date().getHours() + ":" + new Date().getMinutes() + ") ";
-    var encodedMsg = datetime + user + " : " + msg;
+
+    var datetime = "("+new Date().getHours().toString().padStart(2, '0') + ":" + new Date().getMinutes().toString().padStart(2, '0') + ") ";
+    var encodedMsg = datetime + user + " -> " + msg;
     var li = document.createElement("li");
     li.textContent = encodedMsg;
     //add new message to list
     document.getElementById("messagesList").appendChild(li);
+    $('#messagesList').animate({scrollTop: $('#messagesList').prop("scrollHeight")}, 500);
 });
 connection.on("UpdateCount", updateOnlineUserCount);
 connection.on("UpdateUserList", updateOnlineUserList);

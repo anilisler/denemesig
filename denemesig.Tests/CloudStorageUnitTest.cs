@@ -27,7 +27,7 @@ namespace denemesig.Tests
         public void ValidateInsertMessageConnectionId()
         {
             CloudStorage cloudStorage = new CloudStorage();
-            Assert.Equal("connectionId2", cloudStorage.InsertMessage("connectionId", "user", "message").ConnectionID);
+            Assert.Equal("connectionId", cloudStorage.InsertMessage("connectionId", "user", "message").ConnectionID);
         }
         [Fact]
         public void ValidateInsertMessageUser()

@@ -10,17 +10,40 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace denemesig
 {
+    /// <summary>
+    /// Startup class where all the configuration is done and processed once the application is starting. 
+    /// This method gets called by the runtime. Use this method to add services to the container.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Constructor of the <see cref="T:denemesig.Startup"/> class.
+        /// Initializes a new instance of the <see cref="T:denemesig.Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">Configuration.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Gets the application container.
+        /// </summary>
+        /// <value>The application container.</value>
         public IContainer ApplicationContainer { get; private set; }
 
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
+        /// <value>The configuration.</value>
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// Configures the services.
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <returns>IServiceProvider</returns>
+        /// <param name="services">Services.</param>
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
@@ -50,6 +73,12 @@ namespace denemesig
             return new AutofacServiceProvider(this.ApplicationContainer);
         }
 
+        /// <summary>
+        /// Configure the specified app and env.
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">App.</param>
+        /// <param name="env">Env.</param>
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
