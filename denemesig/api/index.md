@@ -1,2 +1,3 @@
 # API INTRO
-TODO: Add .NET projects to the *src* folder and run `docfx` to generate **REAL** *API Documentation*!
+
+Here you can find API documentation of the project.

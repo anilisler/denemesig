@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "rYSQgt1dAIbDjmpZ6fxLvQ=="
+          "hash": "81BvsyHBahEemVdjyhW0EA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -187,15 +187,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "/bDxc7Co58iD+Uag4GtNPg=="
+          "hash": "Rrv910Aoq6DvECVm2vM8Ag=="
         }
       },
       "is_incremental": false,
@@ -223,12 +220,11 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 3,
+          "skipped_file_count": 1
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -236,11 +232,12 @@
           "total_file_count": 11,
           "skipped_file_count": 11
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 2
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
