@@ -1,0 +1,264 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/sahabt/Documents/AnilProjects/denemesig/denemesig",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.ChatHub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.ChatHub.html",
+          "hash": "Cdz3YNSEEPFZntlwcl1dgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.CloudStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.CloudStorage.html",
+          "hash": "ouHIZbIRDPK3zKMFZjdS6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.ICloudStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.ICloudStorage.html",
+          "hash": "r5+rTCsmkDZNQ5QfkyI+EA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.MessageEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.MessageEntity.html",
+          "hash": "L4ihRRrfAcBNkhODRxos/Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Pages.ErrorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Pages.ErrorModel.html",
+          "hash": "AC8/MQeGFk4NbrahKOOHFA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Pages.IndexModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Pages.IndexModel.html",
+          "hash": "ffJTK2Bk1IRReY+UpyUssA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Pages.PrivacyModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Pages.PrivacyModel.html",
+          "hash": "QuiFaxJmfXeKsj2+IYwJhQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Pages.html",
+          "hash": "hkB4Rv8gtbSl3S7U8jprOQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Program.html",
+          "hash": "xNJd0NE8+Dcx3UOki25teQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.Startup.html",
+          "hash": "M1s92yFK06m3wRX3bgSUrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/denemesig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/denemesig.html",
+          "hash": "sc2+JCw9QUIyNXl6D2M1xA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "rYSQgt1dAIbDjmpZ6fxLvQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "OM2WTpcRtC7CZGvTjBGUNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "KGNIthJMIrzWqjdFDo3g6w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "PK3E71f9f89UHNkgl0W6gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 10
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
