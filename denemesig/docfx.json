@@ -5,8 +5,7 @@
         {
           "files": [
             "denemesig.csproj"
-          ],
-          "src": "/Users/sahabt/Documents/AnilProjects/denemesig/denemesig"
+          ]
         }
       ],
       "dest": "api",
